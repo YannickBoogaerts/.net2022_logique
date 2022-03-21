@@ -1,0 +1,45 @@
+Début 6.1 
+
+Variables 
+var entree : T <- " "
+var car : C <- ' '
+var cpt : N <- 0 
+var premier : N <- 0
+var dernier : N <- 0 
+
+Afficher "entrer le texte à tester"
+saisir entree 
+Afficher "entrer le caratère à tester"
+saisir car 
+
+Pour i 	allant de 1 à longueur(entree) i++
+
+si car = caract (entree,i)
+	cpt ++ 
+	si cpt = 1
+		alors premier = i
+	fin de si 
+	dernier = i 
+
+fin de si 
+i suivant 
+
+Si cpt = 0 
+	alors afficher "le caractère ne se trouve pas dans le texte"
+	sinon si cpt = 1 
+		alors afficher "le caractère se trouve 1 fois dans le mot à la position numéro" + premier
+		sinon afficher " bla bla bla " + premier + dernier + cpt 
+fin de si
+
+fin de programme 
+
+
+
+
+
+
+
+
+
+
+
