@@ -1,0 +1,112 @@
+début exercice 4.4
+
+début variables locales
+
+var entre: N <- 0
+var max: N <- 0
+var min: N <- 0
+var currentMax: N <- 0
+var currentCount: N <- 0
+var maxCount: N <- 0
+var minCount: N <- 0
+var premMax: N <- 0
+var dernMax: N <- 0
+var occMax: N <- 0
+var occMin: N <- 0
+var premMin: N <- 0
+var dernMin: N <- 0
+
+fin variables locales
+
+afficher "Veuillez saisir un chiffre. La valeur 100 fait arrêter le programme."
+saisir entre
+
+si entre = 100
+
+	alors, afficher "Impossible d'exécuter le programme. Explosion de l'ordinateur imminente !"
+
+	sinon,
+
+	max <- entre
+	min <- entre
+	currentMax <- entre
+	pos <- 1
+	afficher "Veuillez saisir un chiffre"
+	saisir entre
+
+	tant que entre != 100
+
+		pos <- pos + 1
+
+		si entre > max
+
+			alors, max <- entre
+			premMax <- pos
+			dernMax <- pos
+			occMax <- 1
+
+		sinon si entre = max
+
+			alors, dernMax <- pos
+			occMax <- occMax + 1
+			fin si
+
+		fin si
+
+		si entre < min
+
+			alors, min <- entre
+			premMin <- pos
+			dernMin <- pos
+			occMin <- 1
+
+			sinon, si entre = min
+
+				alors, occMin <- occMin + 1
+				dernMin <- pos
+
+		fin si
+
+		si entre > currentMax
+
+			alors, currentMax <- entre
+			currentCount <- currentCount + 1
+
+			sinon si, entre <= currentMax
+
+				alors, currentMax <- entre
+
+				si currentCount < minCount ET currentCount > 1
+					alors, minCount <- currentCount
+
+				fin si
+
+				currentCount <- 1
+
+			fin si
+
+		fin si
+
+		si currentCount > maxCount
+
+			alors, maxCount <- currentCount
+
+		fin si
+
+		afficher "Veuillez saisir un chiffre."
+		saisir entre
+
+	fin tant que
+
+	afficher "la plus petite série de suite de chiffre croissante est: ", minCount
+	afficher "la plus grande série de suite de chiffre croissante est: ", maxCount
+	afficher "la position de la première occurence du plus grand chiffre est: ", premMax
+	afficher "la position de la dernière occurence du plus grand chiffre est: ", dernMax
+	afficher "le nombre d'occurences du chiffre les plus grand est de: ", occMax, " fois."
+	afficher "le nombres d'occurence du chiffre le plus petit est de: ", occMin, "fois."
+	afficher "la position de la première occurence du plus petit chiffre est: ", premMin
+	afficher "la position de dernière occurence du plus petit chiffre est: ", dernMin
+
+fin si
+
+fin exercice 4.4
