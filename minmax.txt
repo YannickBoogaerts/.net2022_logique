@@ -1,0 +1,67 @@
+Debut MinMax
+   Variables locales
+      var entre     :N <- 0
+      var cptValeur :N <- 0 // nombre de valeurs entrées jusqu'a présent
+      var max       :N <- 0 // la valeur maximun jusqu'a présent
+      var cptMax    :N <- 0 // nombres de fois que le max est apparu
+      var maxPrem   :N <- 0 // position de la première occurence de max
+      var maxDer    :N <- 0 // position de la dernière occurence de max
+      var min       :N <- 0 // la valeur minimun jusqu'a présent
+      var cptMin    :N <- 0 // nombres de fois que le min est apparu
+      var minPrem   :N <- 0 // position de la première occurence de min
+      var minDer    :N <- 0 // position de la dernière occurence de min
+   Fin variables locales
+   
+   afficher "Entrez une suite de valeurs terminée par 100"
+   saisir entre
+   si entre != 100
+      alors 
+         // traitement de la première saisie
+         cptValeur <- 1
+         max <- entre
+         cptMax <- 1
+         maxPrem <- 1
+         maxDer  <- 1
+         min <- entre
+         cptMin <- 1
+         minPrem <- 1
+         minDer  <- 1
+         
+         // traitement des saisies suivantes
+         saisir entre
+         tant que entre != 100
+            cptValeur <- cptValeur + 1
+            si entre >= max
+               alors
+                  si entre > max
+                     alors // nouveau max
+                        max <- entre
+                        cptMax <- 1
+                        maxPrem <- cptValeur
+                     sinon // entre = max
+                        cptMax <- cptMax + 1
+                  finsi
+                  maxDer <- cptValeur
+            finsi
+            
+            si entre >= min
+               alors
+                  si entre > min
+                     alors // nouveau min
+                        min <- entre
+                        cptMin <- 1
+                        minPrem <- cptValeur
+                     sinon // entre = min
+                        cptMin <- cptMin + 1
+                  finsi
+                  minDer <- cptValeur
+            finsi
+            
+            saisir entre
+         fin tant que
+         
+         afficher "max : ", max
+         afficher "nombre d'occurence : ", cptMax
+   finsi
+   
+Fin MinMax
