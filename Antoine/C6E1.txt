@@ -1,0 +1,127 @@
+6.1
+DEBUT PROGRAMME
+
+	VAR LOCALES
+		texte		:		T 		<- 		""
+		char		: 		C 		<- 		''
+		trouvé_cptr	:		N		<-		0
+		first_posi	:		N		<-		0
+		last_posi	:		N		<- 		0
+	FIN VAR LOCALES
+
+	AFFICHER		"Entrez un texte."
+	SAISIR			texte
+
+	AFFICHER		"Entrez un charactère."
+	SAISIR			char
+
+	POUR (INT i <- 1; i <= longueur(texte); i++)
+		SI (caract(texte, i) == char)
+		ALORS
+			SI (trouvé_cptr == 0)
+			ALORS
+				first_posi <- i
+			FIN DE SI
+			last_posi <- i
+			trouvé_cptr++
+		FIN DE SI
+	FIN DE POUR
+
+	SI (first_posi <> 0)
+		AFFICHER "Première position : "(+)first_posi
+		AFFICHER "Dernière position :"(+)last_posi
+	ALORS
+
+	AFFICHER "Nombre d'occurences :"(+)trouvé_cptr
+FIN DE PROGRAMME
+
+----------
+
+6.2
+
+//sousChaine(texte, deb, fin+1)
+//longueur(texte)
+
+DEBUT PROGRAMME
+	VAR LOCALES
+		texte			:		T 		<- 		""
+		source			:		T 		<- 		""
+		trouvé			:		B		<-		false
+		trouvé_cptr		:		N 		<-		0
+		première_posi 	:		N 		<-		0
+		dernière_posi	:		N 		<- 		0
+		cptr 			:		N 		<-		1  
+	FIN VAR LOCALES
+
+	SAISIR source
+	SAISIR texte
+
+	SI (texte <= source)
+	ALORS
+		TANT QUE (cptr < longueur(texte) || cptr > longueur(source) - longueur(texte))
+			trouvé <- false
+			SI (sousChaine(source, cptr, cptr + longueur(texte) + 1) == texte)
+			ALORS 
+				trouvé <- true
+				SI (trouvé_cptr == 0)
+				ALORS 
+					première_posi <- cptr
+				FIN DE SI
+				dernière_posi = cptr
+				trouvé_cptr++
+				cptr = cptr + longueur(texte)
+			SINON
+				cptr++
+			FIN DE SI
+		FIN DE TANT QUE
+	FIN DE SI
+	
+	SI (trouvé_cptr > 0)
+	ALORS
+		AFFICHER "Nombre d'occurence : "(+)trouvé_cptr
+		AFFICHER "Première position : "(+)première_posi
+		AFFICHER "Dernière position : "(+)dernière_posi
+	SINON
+		AFFICHER texte(+)" n'est pas contenu dans "(+)source
+	FIN DE SI
+
+FIN DE PROGRAMME
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
