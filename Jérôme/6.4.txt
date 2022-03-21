@@ -29,5 +29,8 @@ si pos 2 > longueur (source) + 1 et pos1 > 0 et pos2 > pos1
 	sinon 
 		afficher " position non valide "
 finsi
+
+
+fin 6.4
 		
 
