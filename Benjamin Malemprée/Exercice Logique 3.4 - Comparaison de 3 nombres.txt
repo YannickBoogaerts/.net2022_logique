@@ -1,0 +1,48 @@
+début Exercice 3.4
+
+début variables locales
+const petit: T <- "est plus petit que "
+const egal: T <- "est égal à "
+var chiffre1: N <- 0
+var chiffre2: N <- 0
+var chiffre3: N <- 0
+var tampon: N <- 0
+fin variables locales
+
+afficher "Veuillez introduire 3 chiffres, nous allons comparer leurs ordres du plus petit au plus grand."
+saisir chiffre1
+saisir chiffre2
+saisir chiffre3
+
+si chiffre1 > chiffre2
+Alors, tampon <- chiffre1
+chiffre1 <- chiffre2
+chiffre2 <- tampon
+fin si
+
+si chiffre1 > chiffre3
+Aors, tampon <- chiffre1
+chiffre1 <- chiffre3
+chiffre3 <- tampon
+fin si
+
+si chiffre2 > chiffre3
+Alors, tampon <- chiffre2
+chiffre2 <- chiffre3
+chiffre3 <- tampon
+fin si
+
+si chiffre1 =/= chiffre2 ET chiffre2 =/= chiffre3
+	Alors, Afficher chiffre1, petit, chiffre2, petit, chiffre3
+	Sinon 
+	si chiffre1 = chiffre2 ET chiffre2 =/= chiffre3
+	Alors, Afficher chiffre1, egal, chiffre2, petit, chiffre3
+	Sinon 
+	si chiffre1 =/= chiffre2 et chiffre2 = chiffre3
+	Alors, Afficher chiffre1, petit, chiffre2, egal, chiffre3
+	Sinon 
+	si, chiffre1 = chiffre2 ET chiffre2 = chiffre3
+	Alors, Afficher chiffre1, egal, chiffre2, egal, chiffre3
+fin si
+
+fin Exercice 3.4
