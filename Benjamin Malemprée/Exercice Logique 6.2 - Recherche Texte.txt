@@ -1,0 +1,72 @@
+début exercice 6.2
+
+début variables locales
+
+var baseText: T <- ""
+var searchText: T <- ""
+var scan: N <- 1
+var rep: N <- 0
+var premPos: N <- 0
+var dernPos: N <- 0
+var nouvDernPos:  B <- FAUX
+
+fin variables locales
+
+afficher "Veuillez saisir un texte source"
+saisir baseText
+afficher "Veuillez saisir un texte à rechercher"
+saisir searchText
+
+si longueur(searchText) > longueur(baseText)
+
+	alors, 
+	Afficher "Recherche impossible dans votre texte. Le texte que vous cherchez est trop long"
+
+	sinon,
+	Tant que longueur(searchText) + scan <= longueur(baseText) + 1
+
+		si sousChaine(baseText, scan, longueur(searchText) + scan) = searchText
+
+			alors, 
+			dernPos <- scan
+			nouvDernPos <- VRAI
+
+			si rep = 0
+
+				alors, 
+				premPos <- scan
+
+			fin si
+
+			rep <- rep + 1
+
+		fin si
+
+		si nouvDernPos = FAUX
+
+			alors, 
+			scan <- scan + 1
+
+			sinon, 
+			scan <- scan + longueur(searchText)
+			nouvDernPos <- FAUX
+
+		fin si
+
+	fin tant que
+
+	si rep != 0
+
+		alors, 
+		afficher "Le nombre de fois où le texte recherché apparaît dans votre texte source est de : ", rep, " fois."
+		afficher "La première fois que le texte recherché apparaît dans votre texte source est à la position : ", premPos
+		afficher "La dernière fois que le texte recherché apparaît dans votre texte source est à la position : ", dernPos
+
+		sinon,
+		afficher "Le texte que vous avez cherché n'apparaît jamais dans votre texte source."
+
+	fin si
+
+fin si
+
+fin exercice 6.2
