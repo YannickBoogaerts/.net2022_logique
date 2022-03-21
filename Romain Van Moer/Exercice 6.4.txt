@@ -1,0 +1,31 @@
+DébutEx
+	variables locales
+		Var texte :T <- ""
+		Var cpt :N <- 0
+		Var positionDep :N <- 0
+		Var positionFin :N <- 0
+		Var sousChaine :T <- ""
+	Fin variables locales
+	
+		Afficher "entrer texte"
+		saisir texte
+		Afficher "entrer une position de départ"
+		saisir positionDep
+		Afficher "entrer une position de fin"
+		saisir positionFin
+		
+		Si positionFin < longueur(texte) + 1 et positionDep > 0 et positionDep < positionFin
+			alors 
+				cpt <- positionDep
+				tant que cpt < positionFin  
+					sousChaine <- sousChaine (+) caract(texte,cpt)
+					cpt <- cpt +1
+				Fin tant que
+			sinon
+				afficher "erreur saisir une nouvelle valeur"
+				saisir positionDep
+				saisir positionFin
+		Finsi
+	
+		Afficher sousChaine
+FinEx
