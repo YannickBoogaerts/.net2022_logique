@@ -1,0 +1,27 @@
+3.1
+Ecrire le programme qui résout l’équation di 1er degrés : ax + b = 0
+Le programme demande à l’utilisateur une valeur pour a et pour b et donne si possible la valeur de x.
+
+Debut Ex3.1
+	Variables locales
+		Var a :n <- 0
+		Var b :n <- 0
+		Var x :n <- 0
+	Fin variables locales
+	Afficher « quel est la valeur de a : »
+	Saisir a
+		Afficher « quel est la valeur de b : »
+	Saisir b
+		Si a = 0 et b /= 0 
+			Alors
+				Afficher « l’équation est impossible »
+			Sinon 
+				Si a et b = 0
+					Alors
+						Afficher « La valeur de x est indéterminé »
+					Sinon 
+						X <- -b/a
+						Afficher « le résultat est : », x
+				finsi
+		finsi
+fin ex3.1
