@@ -1,0 +1,17 @@
+6.6 inversion de caractere 
+dbt de pgm 
+variable local 
+text t=''
+result t="" 
+limite n=0
+
+saisir text 
+
+limite =longueur(text)
+
+tant que limite >=1
+result =result+caract(text,limite)
+limite--
+fin tant que 
+
+fin pgm 

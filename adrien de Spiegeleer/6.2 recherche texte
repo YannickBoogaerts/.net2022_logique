@@ -1,0 +1,46 @@
+6.2 recherche texte 
+ dbt pgm 
+
+ Variale local 
+ texteS t=""
+ texteR t=""
+ compar t=""
+ cpt n=0
+ long n=0
+ longrech n=0
+ occu n=0
+ first n=0
+ last n=0
+
+
+afficher "entrer un texte source"
+saisir texteS
+afficher 'entrer le mot a chercher'
+saisir texteR
+
+long=longeur(texteS)
+positionchaine=longeur(texteR)
+
+tant que cpt<=long
+compar=souchaine (textS,cpt,positionchaine)
+si compar=texteR
+	occu++
+	last=cpt
+	cpt=cpt+postionchaine
+	positionchaine=positionchaine+positionchaine
+sinon
+	 cpt++  
+	 positionchaine++
+fin de si	
+
+Si first=0
+	first=cpt
+fin si	
+
+fin tant que 
+
+Si occu <>0		
+	afficher "le caractere aparait la premier fois à la position ",first
+	afficher "le caractere aparait la dernier fois à la position ",last
+	afficher "il apparait ",occu,"fois"
+fin si 

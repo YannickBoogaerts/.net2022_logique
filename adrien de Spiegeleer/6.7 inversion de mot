@@ -1,0 +1,29 @@
+6.7 inversion de mot 
+
+dbt de pgm 
+variable local 
+texte t=''
+result t="" 
+limite n=0
+mot t=""
+letrre t=""
+
+saisir texte
+
+limite=longueur(texte)
+
+tant que cpt<=limite
+
+Si carac(texte,cpt)<>' '
+	mot=mot+caract(text,cpt)
+  		
+Sinon	
+  	result=mot+""+result
+  	mot=""
+fin de si
+cpt++  	
+fin tant que 
+
+result=mot+""result
+afficher result
+fin pgm
