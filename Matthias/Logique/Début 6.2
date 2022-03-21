@@ -1,0 +1,33 @@
+Début 6.2 
+
+Variables
+var source : T <- " "
+var search : T <- " "
+var premier : N <- 0
+var dernier : N <- 0 
+var cpt : N <- 0 
+var cptboucle : N <- 1
+
+
+afficher "entrer le texte source"
+saisir source
+afficher "entrer le mot à rechercher"
+saisir search
+
+Tant que cptboucle <= longueur(source)-longueur(search)+1
+
+Si search = souschaine(source,cptboucle, cptboucle + longueur(search))
+	cpt = cpt + 1
+	si cpt = 1 
+		alors premier = cptboucle 
+	fin de si 
+	dernier = cptboucle
+	cptboucle = cptboucle + longueur(search)
+	sinon cptboucle = cptboucle + 1 
+
+fin de si 
+fin de tant que 
+
+afficher "blablabla" + premier + dernier + cpt 
+
+
