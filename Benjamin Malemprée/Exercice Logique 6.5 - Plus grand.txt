@@ -1,0 +1,75 @@
+début exercice 6.5
+
+début variables locales
+
+var text1: T <- ""
+var text2: T <- ""
+var scan: N <- 1
+var stopWhile: B <- FAUX
+
+fin variables locales
+
+afficher "Veuillez saisir un premier texte"
+saisir text1
+afficher "Veuillez saisir un seconde texte"
+saisir text2
+
+si longueur(text1) = 0 OU longueur(text2) = 0
+
+	alors,
+	afficher "Impossible de comparer la position des deux textes l'un par rapport à l'autre."
+
+	sinon,
+	tant que !stopWhile ET caract(text1, scan) = caract(text2, scan) 
+
+		scan <- scan + 1
+
+		si scan > longueur(text1) OU scan > longueur(text2)
+
+			alors,
+			stopWhile <- VRAI
+
+		fin si
+
+	fin tant que
+
+	si !stopWhile
+
+		alors,
+		si caract(text1, scan) < caract(text2, scan)
+			
+			alors,
+			afficher "FAUX"
+
+			sinon,
+			afficher "VRAI"
+
+		fin si
+
+		sinon,
+		si longueur(text1) > longueur(text2)
+
+			alors,
+			afficher "VRAI"
+
+		fin si
+
+		si longueur(text2) > longueur(text1)
+
+			alors,
+			afficher "FAUX"
+
+		fin si
+
+		si longueur(text1) = longueur(text2)
+
+			alors,
+			afficher "Impossible de comparer l'ordre alphabétique de deux textes identiques"
+
+		fin si
+
+	fin si
+
+fin si
+
+fin exercice 6.5
