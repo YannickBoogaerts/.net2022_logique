@@ -1,0 +1,31 @@
+début exercice 6.6
+
+début variables locales
+
+var text: T <- ""
+var nouvText: C <- ''
+var scan: N <- 0
+
+fin variables locales
+
+si longueur(text) > 0
+
+	alors, 
+	afficher "Veuillez saisir un texte."
+	saisir text
+
+	tant que scan != longueur(text)
+
+		nouvText <- nouvText (+) caract(text, longueur(text) - scan)
+		scan <- scan + 1
+
+	fin tant que
+
+	afficher nouvText
+
+	sinon,
+	afficher "Il est impossible d'inverser un texte vide."
+
+fin si
+
+fin exercice 6.6
