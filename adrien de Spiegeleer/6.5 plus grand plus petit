@@ -1,0 +1,36 @@
+6.5 plus grand plus petit 
+dbt de pgm 
+variable local 
+text1 t=''
+text2 t=''
+result t="" 
+limite1 n=0
+limite2 n=0
+result b=true
+diff=false
+
+saisir texte1
+saisir texte2
+
+
+limite1=longueur(texte1)
+limite2=longueur(texte2)
+
+tant que cpt<=limite1 et not diff
+
+Si cpt<=limite2
+	Si caract(texte1,cpt)<>caract(texte2,cpt)
+		diff=true
+	fin si
+
+	Si caract(texte1,cpt)<caract(texte2,cpt)
+		result=false
+	fin de si	
+fin de si
+cpt++
+fin tant que 
+si diff=false 
+	si limite1<limite2
+	result= false
+fin de si
+afficher result

@@ -1,0 +1,29 @@
+6.4  sous-chaine
+
+dbt de pgm 
+variable local 
+texte t=""
+pos1 n=0
+pos2 n=0
+cpt n=0
+limite n=0
+
+
+saisir texte 
+saisir pos1 
+saisir pos2
+
+limite=longueur(texte)
+
+Si pos1>=1 et pos2<=limite+1 et pos2>pos1
+
+	tant que pos1<pos2
+		result=result+caract(text,pos1)
+		pos1++
+	fin tant que 	
+
+	afficher "le resultat est" ,result 
+Sinon 
+	afficher "impossible"
+
+fin pgm
