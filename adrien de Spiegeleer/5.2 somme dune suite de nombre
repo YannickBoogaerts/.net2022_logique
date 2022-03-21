@@ -1,0 +1,31 @@
+5.2 somme dune suite de nombre 
+
+dbt pgm
+
+variable local 
+nb  n=0
+nb2 n=0
+somme n=0
+temp
+
+saisir nb 
+saisir nb2 
+Si nb<>nb2
+
+	si nb>nb2
+		temp=nb
+		nb=nb2
+		nb2=temp
+	fin de si
+
+	for nb;nb<nb2+1;nb++
+	somme=somme+nb;
+	fin de for
+
+	afficher "la valeur de l'intervale additionner est ",somme
+Sinon 
+affichez "valeur="nb
+
+fin de si
+
+fin pgm
