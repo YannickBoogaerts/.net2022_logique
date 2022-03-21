@@ -1,0 +1,49 @@
+3_4_Comparaison_3N
+
+DEBUT DU PROG
+
+	DEBUT DECLARATION VAR
+		VAR A : N <- 0;
+		VAR B : N <- 0;
+		VAR C : N <- 0;
+		VAR Temp : N <- 0;µ
+		VAR Opérateur1 : C <- "="
+		VAR Opérateur2 : C <- "="
+	FIN DECLARATION VAR
+
+	Afficher : "Veuillez saisir 3 nombres. Nous allons les mettre dans l'ordre croissant."
+	Saisir A
+	Saisir B
+	Saisir C
+
+	SI (C < A)
+		ALORS
+			Temp <- C
+			C <- A
+			A <- Temp			
+	FIN DE SI
+
+	SI (C < B)
+		ALORS
+			Temp <- B
+			B <- C
+			C <- Temp
+	FIN DE SI
+
+	SI (B < A)
+		ALORS
+			Temp <- A
+			A <- B
+			B <- Temp
+	FIN DE SI
+
+	SI (A!=B)
+		ALORS
+			Opérateur1 <- "<"
+	SI (B!=C)
+		ALORS
+			Opérateur2 <- "< "
+
+	Afficher : A, Opérateur1, B, Opérateur2, C
+
+FIN DU PROG
