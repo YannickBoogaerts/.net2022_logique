@@ -1,0 +1,29 @@
+Debut prog	
+	Variables  locales :
+		var texte :T <- ""
+		var sousTexte :T <- ""
+		var debut :N <- 1
+		var fin :N <- 1
+	Fin Variables locales
+Afficher "Entrez un texte à découper"
+Saisir texte
+Afficher "Selectionner la position de départ de la sous texte"
+Saisir debut
+Afficher "Selectionner la position de fin du sous texte"
+Saisir fin
+
+
+Si ( debut < 1 ou debut > longueur(texte) ou debut > fin ou fin > longueur(texte))
+	alors 
+	Afficher " Erreur : les positions demandées ne sont pas correctes "
+
+Sinon
+	Tant que ( debut > 0 et debut <= longueur(texte) et debut <= fin et fin <= longueur(texte))
+
+   		sousTexte <- sousTexte ⊕ caract(texte,debut)
+    	debut++
+	Fin Tant que
+
+
+Afficher sousTexte
+Fin prog
