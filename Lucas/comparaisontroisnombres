@@ -1,0 +1,51 @@
+comparaison 3 nombres
+
+debut comparaison 
+var plusgrand : N <- 0
+var pluspetit : N <- 0
+var nombre : N <- 0
+var milieu : N <- 0
+
+afficher "saisir un nombre"
+saisir nombre 
+pluspetit <- nombre
+plusgrand <- nombre
+milieu <- nombre
+
+afficher "saisir un nombre"
+saisir nombre
+
+Si nombre < pluspetit
+	pluspetit <- nombre
+
+sinon
+
+Si nombre > plusgrand
+plusgrand <- nombre
+milieu <- nombre
+
+afficher "saisir un nombre"
+saisir nombre
+
+Si nombre < pluspetit
+milieu <- pluspetit
+pluspetit <- nombre
+fin de si
+
+Si nombre > plusgrand
+milieu <- plusgrand
+plusgrand <- nombre
+fin de si
+
+Si milieu = pluspetit
+ afficher "l'ordre des nombres est", pluspetit, "=",milieu, "<", plusgrand
+ sinon 
+ Si pluspetit < nombre AND nombre = plusgrand 
+ alors afficher "l'ordre des nombres est", pluspetit, "<", nombre, "=", plusgrand
+ fin de si 
+
+ Si nombre = pluspetit AND nombre = plusgrand
+ afficher "tous les nombres sont égaux"
+ fin de si
+
+fin de programme
